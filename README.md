@@ -104,4 +104,4 @@ HPX supports <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manua
 
 #### License
 
-MIT
+<a href="https://github.com/brakmic/HPX_Projects/blob/master/LICENSE">MIT</a>
