@@ -2,7 +2,11 @@
 
 This is a collection of small demos showing different functionalities from <a href="http://stellar.cct.lsu.edu/tag/hpx/">HPX</a>. 
 
-All parts are based on Visual C++ under VS 2015. HPX version is 0.9.11.
+All parts are based on Visual C++ under VS 2015. 
+
+HPX version: **0.9.11**
+
+BOOST version: **1.60**
 
 The configuration procedure of HPX with Visual Studio is rather complex and can quickly lead to very confusing errors.
 
