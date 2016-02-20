@@ -4,9 +4,11 @@ This is a collection of small demos showing different functionalities from <a hr
 
 All parts are based on Visual C++ under VS 2015. 
 
-HPX version: **0.9.11**
+<a href="http://stellar.cct.lsu.edu/downloads/">HPX</a> version: **0.9.11**
 
-BOOST version: **1.60**
+<a href="http://www.boost.org/users/history/version_1_60_0.html">BOOST</a> version: **1.60**
+
+<a href="https://www.open-mpi.org/software/hwloc/v1.11/">HWLOC</a> version: **1.11.0**
 
 The configuration procedure of HPX with Visual Studio is rather complex and can quickly lead to very confusing errors.
 
@@ -50,13 +52,13 @@ The compilation is straightforward. Just use the stadard Debug/Release options.
 
 #### Execution
 
-Currently, everything the whole execution logic is packed into one ugly source file. But the participating objects and functions are nicely defined over several `cpp` and `hpp` files. But soon I'll provide a better structure. The main focus will be on `actions` and `components`. This project already contains a few <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/applying_actions.html">actions</a> and a <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/components.html">component</a> implementing (a)synchronous methods. The output is console-based and currently looks like this:
+Currently, everything the whole execution logic is packed into **a single ugly** `source file`. At least the participating objects and functions are defined over several `cpp` and `hpp` files. But soon I'll provide a better structure. The main focus will be on `actions` and `components`. This project already contains a few <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/applying_actions.html">actions</a> and a <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/components.html">component</a> implementing some (a)synchronous methods. The output is *console-based* and currently looks like this:
 
 <img src="http://fs5.directupload.net/images/160220/an9wtd6x.png" /> 
 
-The program main is located in `HpxTest_1.cpp` which contains a special `hpx_main` function
+The program's `main` is located in `HpxTest_1.cpp` which contains a special `hpx_main` function
 where HPX kicks in. To make the app aware of this additional `main` function we have to
-execute another HPX-function `hpx::init`. Of course, this is not the only way to start an 
+execute another HPX-function called `hpx::init`. Of course, this is not the only way to start an 
 HPX app. There are <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/applications.html">several possibilities</a> for different use-cases.
 
 <img src="http://fs5.directupload.net/images/160221/yccrybig.png" />
@@ -87,7 +89,7 @@ Asynchronous functions throw asynnchronous errors. And in highly parallel system
 
 - **Components**
 
-HPX supports <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/components.html">remotely manageable</a> components.
+HPX supports <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/components.html">remotely manageable</a> components. In this demo part we initialize a component and call it's (a)synchronous methods to manipulate a number.
 
 #### License
 
