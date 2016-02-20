@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_PropertySheetDisplayName>HPX</_PropertySheetDisplayName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(HWLOC_ROOT)\include;$(GSL_ROOT)\include;$(HPX_ROOT)\include;$(HPX_ROOT)\include\hpx\external;$(BOOST_ROOT)\include\boost-1_60;</AdditionalIncludeDirectories>
+      <AdditionalOptions> -Zc:inline -Zc:throwingNew -bigobj %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>BOOST_ALL_DYN_LINK;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(HPX_ROOT)\lib;$(BOOST_ROOT)\lib;$(HWLOC_ROOT)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>
