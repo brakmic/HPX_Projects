@@ -16,5 +16,5 @@ using mycomp_type = hpx::components::simple_component<app::components::MyMachine
 using argument_type = mycomp_type::argument_type;
 HPX_REGISTER_COMPONENT(mycomp_type, MyMachine);
 HPX_REGISTER_ACTION(mycomp_type::wrapped_type::get_number_action, machine_get_number_action);
-HPX_REGISTER_ACTION(mycomp_type::wrapped_type::set_number_action, machine_get_number_action);
+HPX_REGISTER_ACTION(mycomp_type::wrapped_type::set_number_action, machine_set_number_action);
 //************************************************************************
