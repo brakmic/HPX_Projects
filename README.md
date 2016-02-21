@@ -52,7 +52,7 @@ The compilation is straightforward. Just use the standard **Debug/Release** faci
 
 #### Execution
 
-Currently, everything the whole execution logic is packed into **a single ugly** `source file`. At least the participating objects and functions are defined over several `cpp` and `hpp` files. But soon I'll provide a better structure. The main focus will be on `actions` and `components`. This project already contains a few <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/applying_actions.html">actions</a> and a <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/components.html">component</a> implementing some (a)synchronous methods. There's also a separate DLL-Project available that defines another HPX-Component (`SmallServer.dll`) to be used in this demo.  The output is *console-based* and currently looks like this:
+Currently, the whole execution logic is packed into **a single ugly** `source file`. At least the participating objects and functions are defined over several `cpp` and `hpp` files. But soon I'll provide a better structure. The main focus will be on `actions` and `components`. This project already contains a few <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/applying_actions.html">actions</a> and a <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/components.html">component</a> implementing some (a)synchronous methods. There's also a separate DLL-Project available that defines another HPX-Component (`SmallServer.dll`) to be used in this demo.  The output is *console-based* and currently looks like this:
 
 <img src="http://fs5.directupload.net/images/160221/otovusdf.png" /> 
 
