@@ -48,13 +48,13 @@ After having compiled and installed the libraries (boost, hpx & hwloc) you have 
 
 #### Compilation
 
-The compilation is straightforward. Just use the stadard Debug/Release options.
+The compilation is straightforward. Just use the standard **Debug/Release** facilities.
 
 #### Execution
 
-Currently, everything the whole execution logic is packed into **a single ugly** `source file`. At least the participating objects and functions are defined over several `cpp` and `hpp` files. But soon I'll provide a better structure. The main focus will be on `actions` and `components`. This project already contains a few <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/applying_actions.html">actions</a> and a <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/components.html">component</a> implementing some (a)synchronous methods. The output is *console-based* and currently looks like this:
+Currently, everything the whole execution logic is packed into **a single ugly** `source file`. At least the participating objects and functions are defined over several `cpp` and `hpp` files. But soon I'll provide a better structure. The main focus will be on `actions` and `components`. This project already contains a few <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/applying_actions.html">actions</a> and a <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/components.html">component</a> implementing some (a)synchronous methods. There's also a separate DLL-Project available that defines another HPX-Component (`SmallServer.dll`) to be used in this demo.  The output is *console-based* and currently looks like this:
 
-<img src="http://fs5.directupload.net/images/160220/an9wtd6x.png" /> 
+<img src="http://fs5.directupload.net/images/160221/otovusdf.png" /> 
 
 The program's `main` is located in `HpxTest_1.cpp` which contains a special `hpx_main` function
 where HPX kicks in. To make the app aware of this additional `main` function we have to
@@ -66,7 +66,7 @@ HPX app. There are <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx
 In our case the `hpx::main` contains a bunch of calls to other functions which utilize
 different functionalities from HPX.
 
-<img src="http://fs5.directupload.net/images/160221/x4kfbgmz.png"/> 
+<img src="http://fs5.directupload.net/images/160221/clw34huh.png"/> 
 
 - Applying **(a)synchronous** `actions`. 
 
@@ -90,6 +90,19 @@ Asynchronous functions throw *asynchronous* errors. And in highly parallel syste
 - **Components**
 
 HPX supports <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/components.html">remotely manageable</a> components. In this demo part we initialize a component and call it's (a)synchronous methods to manipulate a number.
+
+- **Components from DLLs**
+
+HPX also <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/init/configuration/loading_components.html#hpx.manual.init.configuration.loading_components.component_example">supports loading components from DLLs</a>. In this example we have a `SmallServer.dll` that lives in a project of the same name.
+
+<img src="http://fs5.directupload.net/images/160221/y5z2f2n5.png" />
+
+Our client app `HpxTest_1.exe` should be able to load and execute exported methods from **SmallServer.dll**. This is done the `standard way` via `#include "smallserver.h"` where the needed `function declarations` & `component exports` are located. It's important to know that in this file **no function definitions** should be located.
+Any function definition in this header file will ultimately lead to weird `dllimport errors`. Put your function definitions into `SmallServer.cpp`. The import library file SmallServer.lib is located in the Output directory: `x64/Debug` respective `x64/Release`. HpxTest_1.exe needs this file for mapping to SmallServer-exports. 
+
+*If you'd prefer some other location take care of properly setting the import-library paths in Project Settings.*
+
+<img src="http://fs5.directupload.net/images/160221/lkzx9t7i.png" />
 
 #### License
 
