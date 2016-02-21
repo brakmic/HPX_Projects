@@ -3,7 +3,7 @@
 #include <hpx/runtime/components/component_factory.hpp>
 #include "smallserver.h"
 
-//original code: http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/init/configuration/loading_components.html#hpx.manual.init.configuration.loading_components.component_example
+//original code: http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/init/configuration/loading_components.html
 //adapted to work under Visual Studio
 
 using server_type = hpx::components::component<mylib::components::server>;
