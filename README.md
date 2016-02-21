@@ -84,7 +84,7 @@ A <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/applying_
 
 - **Error handling** in HPX
 
-Asynchronous functions throw asynnchronous errors. And in highly parallel systems errors are really hard to handle. But HPX keeps the complexity away by providing
+Asynchronous functions throw *asynchronous* errors. And in highly parallel systems errors are really hard to handle. But HPX keeps the complexity away by providing
 <a href="http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/applying_actions/action_error_handling.html">nice facilities</a> for location-agnostic error handling.
 
 - **Components**
