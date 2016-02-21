@@ -237,6 +237,3 @@ _Pvt_Extensions
 
 # db files
 *.db
-
-#temp unavailable
-Libs/

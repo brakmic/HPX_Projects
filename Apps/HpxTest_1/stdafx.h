@@ -31,3 +31,6 @@
 #include "components.hpp"
 #include "stubs.h"
 #include "clients.h"
+
+// SmallServer references
+#include "../../Libs/SmallServer/SmallServer.h"

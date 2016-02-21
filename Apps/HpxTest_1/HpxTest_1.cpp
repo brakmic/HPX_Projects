@@ -68,10 +68,27 @@ void component_demo()
 	hpx::cout << "Component changed value to: " << aNumber << hpx::endl;
 }
 
+void dll_component_demo(std::size_t num_components, const std::string& name)
+{
+	std::vector<hpx::id_type> localities = hpx::find_all_localities();
+	hpx::components::component_type svc_type = 
+		mylib::components::server::get_component_type();
+	std::vector<hpx::id_type> components =
+		hpx::new_<mylib::components::server[]>(
+			hpx::default_layout(localities), num_components).get();
+
+	mylib::components::server::print_greeting_action say_hello;
+	for (auto c : components) {
+		say_hello(c, name);
+	}
+}
+
 int hpx_main(int argc, char* argv[])
 {
 	//get local id
 	auto id = hpx::find_here();
+	auto num_components = 10;
+	const std::string name = "Harris";
 
 	function_invocation_demo(id);
 
@@ -80,6 +97,8 @@ int hpx_main(int argc, char* argv[])
 	error_handling_demo(id);
 	
 	component_demo();
+
+	dll_component_demo(num_components, name);
 	
 	//shutdown HPX
 	return hpx::finalize();

@@ -11,9 +11,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HpxTest_1", "Apps\HpxTest_1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{32632EC9-8A10-46C8-A152-CA4B5A9516AB}"
 	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SmallServer", "Libs\SmallServer\SmallServer.vcxproj", "{EFA436B8-4A4D-48D9-9978-9CC73BEB04F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,11 +34,20 @@ Global
 		{03E4AF23-4B81-410B-9D5E-7FA175141C31}.Release|x64.Build.0 = Release|x64
 		{03E4AF23-4B81-410B-9D5E-7FA175141C31}.Release|x86.ActiveCfg = Release|Win32
 		{03E4AF23-4B81-410B-9D5E-7FA175141C31}.Release|x86.Build.0 = Release|Win32
+		{EFA436B8-4A4D-48D9-9978-9CC73BEB04F2}.Debug|x64.ActiveCfg = Debug|x64
+		{EFA436B8-4A4D-48D9-9978-9CC73BEB04F2}.Debug|x64.Build.0 = Debug|x64
+		{EFA436B8-4A4D-48D9-9978-9CC73BEB04F2}.Debug|x86.ActiveCfg = Debug|Win32
+		{EFA436B8-4A4D-48D9-9978-9CC73BEB04F2}.Debug|x86.Build.0 = Debug|Win32
+		{EFA436B8-4A4D-48D9-9978-9CC73BEB04F2}.Release|x64.ActiveCfg = Release|x64
+		{EFA436B8-4A4D-48D9-9978-9CC73BEB04F2}.Release|x64.Build.0 = Release|x64
+		{EFA436B8-4A4D-48D9-9978-9CC73BEB04F2}.Release|x86.ActiveCfg = Release|Win32
+		{EFA436B8-4A4D-48D9-9978-9CC73BEB04F2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{03E4AF23-4B81-410B-9D5E-7FA175141C31} = {CB2CA5E2-C98F-4DBB-9F2B-528839917EDB}
+		{EFA436B8-4A4D-48D9-9978-9CC73BEB04F2} = {C26EE6B0-0E43-44A8-8C43-A054350E174D}
 	EndGlobalSection
 EndGlobal
