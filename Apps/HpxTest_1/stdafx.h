@@ -18,8 +18,6 @@
 
 
 // TODO: reference additional headers your program requires here
-#include <iostream>
-#include <string>
 #include <hpx/hpx_init.hpp>
 #include <hpx/include/actions.hpp>
 #include <hpx/include/lcos.hpp>
