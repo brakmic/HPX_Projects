@@ -14,6 +14,8 @@ The configuration procedure of HPX with Visual Studio is rather complex and can 
 
 Therefore I'd recommend to use my small tutorial on building <a href="https://github.com/brakmic/hpx/blob/b3feb9561fecc1ef4b52717d70332c8148104cdd/docs/tutorial/win32/howto.md">HPX under Windows</a>.
 
+For a more detailed explanation and examples you can read <a href="http://blog.brakmic.com/high-performance-computing-with-hpx/">my article on HPX</a>.
+
 #### Configuration
 
 To make the configuration of Project-Options easier I've extracted some `default` properties into a separate `prop` file.

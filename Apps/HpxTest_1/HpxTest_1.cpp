@@ -41,35 +41,42 @@ void error_handling_demo(hpx::naming::id_type id)
 	global_divide_number divNo;
 	try
 	{
-		divNo(id, -1.0);
+		divNo(id, 0);
+		//divNo(id, -1.0);
 	}
 	catch (hpx::exception const& e)
 	{
 		hpx::cout << "Exception thrown: " << e.what() << hpx::endl;
 	}
-
 }
 
 void component_demo()
 {
 	//Defining Components
 	//http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/components/components_server.html
+	//get component's and default argument's types
 	using my_machine_type = app::components::MyMachine;
 	using argument_type = my_machine_type::argument_type;
+	//find all localities 
 	std::vector<hpx::id_type> localities = hpx::find_all_localities();
-
+	//instantiate a client accessing our component
 	app::clients::myclient client1(hpx::components::new_<my_machine_type>(localities.back()));
 	//remember component's id
 	auto cid = client1.get_id();
+	//access the component's get_number-method synchronously (look into stub-declaration for more info)
 	argument_type aNumber = client1.get_number_sync(cid);
 	hpx::cout << "Original value from component: " << aNumber << hpx::endl;
+	//access component's set_number synchronously
 	client1.set_number_sync(125);
+	//access component's get_number synchronously
 	aNumber = client1.get_number_sync(cid);
 	hpx::cout << "Component changed value to: " << aNumber << hpx::endl;
 }
 
 void dll_component_demo(std::size_t num_components, const std::string& name)
 {
+	//Loading components
+	//http://stellar.cct.lsu.edu/files/hpx-0.9.11/html/hpx/manual/init/configuration/loading_components.html
 	std::vector<hpx::id_type> localities = hpx::find_all_localities();
 	hpx::components::component_type svc_type = 
 		mylib::components::server::get_component_type();
